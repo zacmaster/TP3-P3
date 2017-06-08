@@ -1,20 +1,93 @@
 [
   {
-    "nombre": "Historia",
+    "nombre": "PSEC",
+    "codigo": 0,
+    "horaInicio": 13,
+    "horaFin": 17
+  },
+  {
+    "nombre": "Intro. Matematica",
+    "codigo": 0,
+    "horaInicio": 13,
+    "horaFin": 15
+  },
+  {
+    "nombre": "Lectoescritura",
     "codigo": 0,
     "horaInicio": 10,
     "horaFin": 12
   },
   {
-    "nombre": "Matemática",
-    "codigo": 0,
-    "horaInicio": 12,
-    "horaFin": 16
-  },
-  {
-    "nombre": "Lengua",
+    "nombre": "Logica y Teo. Numeros",
     "codigo": 0,
     "horaInicio": 8,
-    "horaFin": 10
+    "horaFin": 12
+  },
+  {
+    "nombre": "Introd. Prog.",
+    "codigo": 0,
+    "horaInicio": 8,
+    "horaFin": 12
+  },
+  {
+    "nombre": "Programacion 1",
+    "codigo": 0,
+    "horaInicio": 8,
+    "horaFin": 12
+  },
+  {
+    "nombre": "Programacion 2",
+    "codigo": 0,
+    "horaInicio": 18,
+    "horaFin": 22
+  },
+  {
+    "nombre": "Programacion 3",
+    "codigo": 0,
+    "horaInicio": 18,
+    "horaFin": 22
+  },
+  {
+    "nombre": "Ingles 1",
+    "codigo": 0,
+    "horaInicio": 10,
+    "horaFin": 12
+  },
+  {
+    "nombre": "Ingles 3",
+    "codigo": 0,
+    "horaInicio": 13,
+    "horaFin": 15
+  },
+  {
+    "nombre": "Orga. Computador",
+    "codigo": 0,
+    "horaInicio": 18,
+    "horaFin": 22
+  },
+  {
+    "nombre": "SOR 1",
+    "codigo": 0,
+    "horaInicio": 18,
+    "horaFin": 22
+  },
+  {
+    "nombre": "Intro Quimica",
+    "codigo": 0,
+    "horaInicio": 18,
+    "horaFin": 20
+  },
+  {
+    "nombre": "Bases Datos 1",
+    "codigo": 0,
+    "horaInicio": 18,
+    "horaFin": 20
+  },
+  {
+    "nombre": "Bases Datos 2",
+    "codigo": 0,
+    "horaInicio": 18,
+    "horaFin": 22
   }
+
 ]

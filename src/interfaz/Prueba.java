@@ -17,9 +17,8 @@ public class Prueba {
 //		materiasJSON.escribirArchivo("materias.json", materias.getMaterias());
 		Asignador asignador = new Asignador("materias.json");
 		System.out.println(asignador.getMaterias().get(0).getNombre());
-		asignador.ordenarMateriasPorHorario();
+		asignador.asignar();
 		System.out.println(asignador.getMaterias().get(0).getNombre());
-		System.out.println(asignador.getMaterias().get(2).getNombre());
 		
 		
 	}

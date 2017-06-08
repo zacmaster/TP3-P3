@@ -14,7 +14,13 @@ public class Asignador {
 		MateriasJSON materiasJSON = new MateriasJSON();
 		materiasJSON.leerArchivo(archivo);
 		materias= materiasJSON.getMaterias();
+		System.out.println(materias.size());
 	}
+	
+	public void asignar(){
+		ordenarMateriasPorHorario();
+	}
+	
 	public void ordenarMateriasPorHorario(){
 		Collections.sort(materias, new Comparator<Materia>() {
 			@Override
