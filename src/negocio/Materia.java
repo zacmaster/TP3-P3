@@ -12,6 +12,26 @@ public class Materia {
 		this.horaInicio = horaInicio;
 		this.horaFin = horaFin;
 	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+
+	public int getHoraInicio() {
+		return horaInicio;
+	}
+
+
+	public int getHoraFin() {
+		return horaFin;
+	}
+
 	
 	
 	
