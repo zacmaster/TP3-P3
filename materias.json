@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "Historia",
+    "codigo": 0,
+    "horaInicio": 10,
+    "horaFin": 12
+  },
+  {
+    "nombre": "Matemática",
+    "codigo": 0,
+    "horaInicio": 12,
+    "horaFin": 16
+  },
+  {
+    "nombre": "Lengua",
+    "codigo": 0,
+    "horaInicio": 8,
+    "horaFin": 10
+  }
+]

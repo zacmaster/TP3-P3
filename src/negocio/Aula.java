@@ -1,7 +1,7 @@
 package negocio;
 
 public class Aula {
-	private Materias materias;
+	private Materias materias = null;
 
 	public Aula(Materias materias) {
 		this.materias = materias;
@@ -9,6 +9,14 @@ public class Aula {
 
 	public Materias getMaterias() {
 		return materias;
+	}
+	public String verMaterias(){
+		if(!materias.equals(null)){
+			for (Materia materia : materias.getMaterias()) {
+				System.out.println(materia.getNombre()+" ");
+			}
+		}
+		return null;
 	}
 
 	
