@@ -12,7 +12,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import negocio.Materia;
-import negocio.Materias;
 
 public class MateriasJSON {
 	private ArrayList<Materia> materias;

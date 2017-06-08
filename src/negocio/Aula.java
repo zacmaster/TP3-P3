@@ -1,18 +1,22 @@
 package negocio;
 
-public class Aula {
-	private Materias materias = null;
+import java.util.ArrayList;
 
-	public Aula(Materias materias) {
-		this.materias = materias;
+public class Aula {
+	private int numero; 
+	private ArrayList<Materia> materias;
+
+	public Aula(int numero) {
+		this.numero = numero;
+		this.materias = new ArrayList<Materia>();
 	}
 
-	public Materias getMaterias() {
+	public ArrayList<Materia> getMaterias() {
 		return materias;
 	}
 	public String verMaterias(){
 		if(!materias.equals(null)){
-			for (Materia materia : materias.materias) {
+			for (Materia materia : materias) {
 				System.out.println(materia.getNombre()+" ");
 			}
 		}
