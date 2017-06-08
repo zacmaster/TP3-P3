@@ -3,7 +3,7 @@ package negocio;
 import java.util.ArrayList;
 
 public class Materias {
-	private ArrayList<Materia> materias;
+	protected ArrayList<Materia> materias;
 	
 	public Materias(){
 		this.materias = new ArrayList<Materia>();
@@ -14,6 +14,10 @@ public class Materias {
 	}
 	public ArrayList<Materia> getMaterias() {
 		return materias;
+	}
+
+	public void setMaterias(ArrayList<Materia> materias) {
+		this.materias = materias;
 	}
 	
 }

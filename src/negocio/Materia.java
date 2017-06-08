@@ -1,6 +1,8 @@
 package negocio;
 
-public class Materia {
+import java.util.Comparator;
+
+public class Materia{
 	private String nombre;
 	private int codigo;
 	private int horaInicio;
@@ -12,7 +14,7 @@ public class Materia {
 		this.horaInicio = horaInicio;
 		this.horaFin = horaFin;
 	}
-
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -32,7 +34,5 @@ public class Materia {
 		return horaFin;
 	}
 
-	
-	
-	
+
 }

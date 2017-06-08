@@ -12,7 +12,7 @@ public class Aula {
 	}
 	public String verMaterias(){
 		if(!materias.equals(null)){
-			for (Materia materia : materias.getMaterias()) {
+			for (Materia materia : materias.materias) {
 				System.out.println(materia.getNombre()+" ");
 			}
 		}
