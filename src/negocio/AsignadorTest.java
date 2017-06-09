@@ -1,5 +1,11 @@
 package negocio;
 
-public class AsignadorTest {
+import static org.junit.Assert.*;
+import org.junit.Test;
 
+public class AsignadorTest {
+	@Test
+	public void constructor(){
+		
+	}
 }

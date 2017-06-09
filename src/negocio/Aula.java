@@ -14,13 +14,20 @@ public class Aula {
 	public ArrayList<Materia> getMaterias() {
 		return materias;
 	}
-	public String verMaterias(){
-		if(!materias.equals(null)){
-			for (Materia materia : materias) {
-				System.out.println(materia.getNombre()+" ");
-			}
-		}
-		return null;
+//	public String verMaterias(){
+//		if(!materias.equals(null)){
+//			for (Materia materia : materias) {
+//				System.out.println(materia.getNombre()+" ");
+//			}
+//		}
+//		return null;
+//	}
+	public int getNumero(){
+		return numero;
+	}
+
+	public void agregarMateria(Materia materia) {
+		materias.add(materia);
 	}
 
 	

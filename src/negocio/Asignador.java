@@ -14,7 +14,6 @@ public class Asignador {
 		MateriasJSON materiasJSON = new MateriasJSON();
 		materiasJSON.leerArchivo(archivo);
 		materias= materiasJSON.getMaterias();
-		System.out.println(materias.size());
 	}
 	
 	public void asignar(){
