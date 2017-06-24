@@ -1,8 +1,24 @@
 package negocio;
 
 public class Materia{
-	private String nombre;
-	private int codigo;
+	String nombre;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public void setHoraInicio(int horaInicio) {
+		this.horaInicio = horaInicio;
+	}
+
+	public void setHoraFin(int horaFin) {
+		this.horaFin = horaFin;
+	}
+
+	int codigo;
 	int horaInicio;
 	int horaFin;
 	int duracion;

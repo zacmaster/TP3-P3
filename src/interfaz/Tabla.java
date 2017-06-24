@@ -38,7 +38,6 @@ public class Tabla extends JPanel{
 	}
 	
 	
-	
 	private Object[][] llenarData(ArrayList<Aula> aulas){
 	    	
 	    	int filas = 0;
@@ -65,6 +64,5 @@ public class Tabla extends JPanel{
 				}
 			}
 			return objetos;
-	    	
 	    }
 }

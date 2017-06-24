@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Aula {
 	private static final AtomicInteger count = new AtomicInteger(0); 
 	final int numero; 
-	ArrayList<Materia> materias;
+	public ArrayList<Materia> materias;
 	int horasDisponibles;
 	int finUltimaMateria;
 
