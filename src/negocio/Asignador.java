@@ -25,35 +25,37 @@ public class Asignador {
 	}
 	
 	public void asignarMaterias(ArrayList<Materia> materias){
+		
 		ArrayList<Integer> indicesRecorridos = new ArrayList<>();
 		Aula aula = new Aula();
 		aulas.add(aula);
 		int indiceAulas = 0;
 		
-//		while(indicesRecorridos.size() != materias.size()){
-		for (int h = 0; h < 5; h++) {
-			System.out.println(h);
+		while(indicesRecorridos.size() != materias.size()){
+			
 			for (int i = 0; i < materias.size(); i++) {
-//				System.out.println(aulas.get(0).llena());
-//				System.out.println(!aulas.get(indiceAulas).llena()+": "+i );
+				
 				if(!indicesRecorridos.contains(i) && !aulas.get(indiceAulas).llena()){
-					System.out.println("entro al primer if");
-					if(aulas.get(indiceAulas).agregarMateria(materias.get(i))){
+					
+					Aula aulaActual = aulas.get(indiceAulas);
+					Materia materiaActual = materias.get(i);
+					
+					if(sePudoagregarMateria(aulaActual, materiaActual)){
 						indicesRecorridos.add(i);
 					}
 				}
 			}
-			if(indicesRecorridos.size() != aulas.size()){
+			if(indicesRecorridos.size() != materias.size()){
 				aulas.add(new Aula(){});
 			}
 			indiceAulas++;
-			
 		}
-			
-//		}
-		
 	}
 	
+	private boolean sePudoagregarMateria(Aula aula, Materia materia) {
+		return aula.agregarMateria(materia);
+	}
+
 	public void ordenarMateriasPorHorario(){
 		Collections.sort(materias, new Comparator<Materia>() {
 			@Override
@@ -65,12 +67,13 @@ public class Asignador {
 	public ArrayList<Materia> getMaterias() {
 		return materias;
 	}
-	public static void main(String[] args) {
-		Asignador asig = new Asignador("materias.json");
-		asig.asignar();
-		System.out.println(asig.aulas.get(2).materias);
-		
-	}
+//	public static void main(String[] args) {
+//		Asignador asig = new Asignador("materias.json");
+//		asig.asignar();
+//		for (int i = 0; i < asig.aulas.size(); i++) {
+//			System.out.println(asig.aulas.get(i).materias);
+//		}
+//	}
 	
 	
 

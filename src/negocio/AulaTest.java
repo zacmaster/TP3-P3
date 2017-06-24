@@ -36,7 +36,7 @@ public class AulaTest {
 		aula.agregarMateria(m1);
 		aula.agregarMateria(m2);
 		aula.agregarMateria(m3);
-		aula.agregarMateria(m4);
+		assertFalse(aula.agregarMateria(m4));
 		assertEquals(3, aula.materias.size());
 	}
 

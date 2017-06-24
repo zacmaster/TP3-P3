@@ -8,13 +8,13 @@ public class Aula {
 	final int numero; 
 	ArrayList<Materia> materias;
 	int horasDisponibles;
-//	int finUltimaMateria;
+	int finUltimaMateria;
 
 	public Aula() {
 		numero = count.incrementAndGet();
-		this.horasDisponibles = 12;
-		this.materias = new ArrayList<Materia>();
-//		this.finUltimaMateria = 8; //el aula esta disponible a partir de las 8
+		horasDisponibles = 12;
+		materias = new ArrayList<Materia>();
+		finUltimaMateria = 8;
 		
 	}
 
@@ -31,10 +31,10 @@ public class Aula {
 	}
 
 	public boolean agregarMateria(Materia materia) {
-		if(materia.duracion <= horasDisponibles){
+		if(materia.duracion <= horasDisponibles && finUltimaMateria <= materia.horaInicio){
 			materias.add(materia);
 			horasDisponibles -= materia.duracion;
-//			finUltimaMateria = materia.horaFin;
+			finUltimaMateria = materia.horaFin; 
 			return true;
 		}
 		return false;
