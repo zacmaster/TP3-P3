@@ -9,7 +9,6 @@ import datos.MateriasJSON;
 public class Asignador {
 	private ArrayList<Aula> aulas;
 	private ArrayList<Materia> materias;
-//	private ArrayList<Materia> materiasAgregadas;
 	
 	public Asignador(String archivo){
 		MateriasJSON materiasJSON = new MateriasJSON();
@@ -24,6 +23,11 @@ public class Asignador {
 		
 	}
 	
+	public ArrayList<Aula> getAulas() {
+		return aulas;
+	}
+
+
 	public void asignarMaterias(ArrayList<Materia> materias){
 		
 		ArrayList<Integer> indicesRecorridos = new ArrayList<>();
@@ -67,13 +71,6 @@ public class Asignador {
 	public ArrayList<Materia> getMaterias() {
 		return materias;
 	}
-//	public static void main(String[] args) {
-//		Asignador asig = new Asignador("materias.json");
-//		asig.asignar();
-//		for (int i = 0; i < asig.aulas.size(); i++) {
-//			System.out.println(asig.aulas.get(i).materias);
-//		}
-//	}
 	
 	
 

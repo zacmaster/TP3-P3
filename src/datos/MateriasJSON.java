@@ -13,7 +13,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import negocio.Materia;
 
-public class MateriasJSON {
+public class MateriasJSON{
 	private ArrayList<Materia> materias;
 	public MateriasJSON(){
 		materias = null;

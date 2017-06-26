@@ -15,19 +15,23 @@ import negocio.Aula;
 public class Tabla extends JPanel{
 	
 	private static final long serialVersionUID = 1L;
+	private JTable tabla;
+	private String[] nombreColumnas = {"Aula","Materia","Codigo","Inicio","Fin"}; 
 
 
 
-	public Tabla(ArrayList<Aula> aulas){
+	public Tabla(){		
 		super(new GridLayout(1,0));
 		
-		String[] nombreColumnas = {"Aula",
-                "Materia",
-                "Codigo",
-                "Inicio",
-                "Fin"};
 		
-		JTable tabla = new JTable(llenarData(aulas), nombreColumnas);
+		Object[][] data = {
+			    {"Kathy", "Smith",
+			     "Snowboarding", "asd", "asd"},
+			    {"John", "Doe",
+			     "Rowing", "asd", "asd"}			    
+		        };
+
+		tabla = new JTable(data,nombreColumnas);
 		tabla.setPreferredScrollableViewportSize(new Dimension(500, 70));
         tabla.setFillsViewportHeight(true);
         
@@ -37,7 +41,9 @@ public class Tabla extends JPanel{
         
 	}
 	
-	
+	public void cargarDatos(ArrayList<Aula> aulas){
+		this.tabla = new JTable(llenarData(aulas), nombreColumnas);
+	}
 	private Object[][] llenarData(ArrayList<Aula> aulas){
 	    	
 	    	int filas = 0;
