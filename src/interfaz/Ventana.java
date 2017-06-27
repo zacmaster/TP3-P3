@@ -1,6 +1,9 @@
 package interfaz;
 
 
+import java.awt.BorderLayout;
+import java.awt.Container;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -22,12 +25,13 @@ public class Ventana {
 		frame.setBounds(100, 100, 800, 600);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		Container contentPane = frame.getContentPane();
+		contentPane.setLayout(new BorderLayout());
 		
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 783, 21);
-		frame.getContentPane().add(menuBar);
+		contentPane.add(menuBar, BorderLayout.NORTH);
 		
 		JMenu mnNewMenu = new JMenu("Archivo");
 		menuBar.add(mnNewMenu);
@@ -43,9 +47,11 @@ public class Ventana {
 		mnNewMenu.add(mntmSalir);
 		
 		Tabla tabla = new Tabla();
-//		Asignador asignador = new Asignador("materias.json");
-//		tabla.cargarDatos(asignador.getAulas());
-		frame.getContentPane().add(tabla);
+		Asignador asignador = new Asignador("materias.json");
+		asignador.asignar();
+		tabla.cargarTabla(asignador.getMatrizMaterias());
+//		System.out.println(asignador.getMatrizMaterias()[1][0]);
+		contentPane.add(tabla,BorderLayout.CENTER);
 		
 		
 		

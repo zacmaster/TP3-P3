@@ -2,73 +2,66 @@ package interfaz;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.util.ArrayList;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-
-import negocio.Aula;
-
-
+import javax.swing.table.DefaultTableModel;
 
 public class Tabla extends JPanel{
-	
 	private static final long serialVersionUID = 1L;
+	private boolean DEBUG = false;
 	private JTable tabla;
-	private String[] nombreColumnas = {"Aula","Materia","Codigo","Inicio","Fin"}; 
-
-
-
-	public Tabla(){		
+	private String[] nombreColumnas = {"Aula","Materia","Codigo","Inicio","Fin"};
+	private DefaultTableModel model;
+	
+	
+	public Tabla(){
 		super(new GridLayout(1,0));
 		
+		model = new DefaultTableModel(null, nombreColumnas);
 		
-		Object[][] data = {
-			    {"Kathy", "Smith",
-			     "Snowboarding", "asd", "asd"},
-			    {"John", "Doe",
-			     "Rowing", "asd", "asd"}			    
-		        };
-
-		tabla = new JTable(data,nombreColumnas);
-		tabla.setPreferredScrollableViewportSize(new Dimension(500, 70));
-        tabla.setFillsViewportHeight(true);
-        
-        JScrollPane scrollPane = new JScrollPane(tabla);
-
-        add(scrollPane);
-        
+		tabla = new JTable(model);
+		tabla .setPreferredScrollableViewportSize(new Dimension(500,700));
+		tabla.setFillsViewportHeight(true);
+		
+		if(DEBUG){
+			tabla.addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent e){
+					printDebugData(tabla);
+				}
+			});
+		}
+		
+		JScrollPane scrollPane = new JScrollPane(tabla);
+		add(scrollPane);
 	}
 	
-	public void cargarDatos(ArrayList<Aula> aulas){
-		this.tabla = new JTable(llenarData(aulas), nombreColumnas);
+	 private void printDebugData(JTable table) {
+	        int numRows = table.getRowCount();
+	        int numCols = table.getColumnCount();
+	        javax.swing.table.TableModel model = table.getModel();
+
+	        System.out.println("Value of data: ");
+	        for (int i=0; i < numRows; i++) {
+	            System.out.print("    row " + i + ":");
+	            for (int j=0; j < numCols; j++) {
+	                System.out.print("  " + model.getValueAt(i, j));
+	            }
+	            System.out.println();
+	        }
+	        System.out.println("--------------------------");
+    }
+	 
+	public void cargarTabla(Object[][] rows){
+		for (Object[] row : rows) {
+			model.addRow(row);
+		}
 	}
-	private Object[][] llenarData(ArrayList<Aula> aulas){
-	    	
-	    	int filas = 0;
-	    	final int columnas = 5;
-	    	int indiceFila = 0;
-	    	for(Aula aula: aulas){
-	    		filas += aula.materias.size();
-	    	}
-	    	Object[][] objetos = new Object[filas][columnas];
-	    	
-	    	for (int i = 0; i < aulas.size(); i++) {
-	    		
-	    		for (int j = 0; j < aulas.get(i).materias.size(); j++) {
-	    			
-	    			objetos[indiceFila][0] = aulas.get(i).getNumero();
-	    			
-	    			for (int j2 = 1; j2 < columnas; j2++) {
-	    				if(j2 == 1)objetos[indiceFila][j2] = aulas.get(i).materias.get(j).getNombre(); 
-	    				if(j2 == 2)objetos[indiceFila][j2] = aulas.get(i).materias.get(j).getCodigo(); 
-	    				if(j2 == 3)objetos[indiceFila][j2] = aulas.get(i).materias.get(j).getHoraInicio(); 
-	    				if(j2 == 4)objetos[indiceFila][j2] = aulas.get(i).materias.get(j).getHoraFin(); 
-					}
-	    			indiceFila++;
-				}
-			}
-			return objetos;
-	    }
+	public void setTableBounds(int x, int y, int width,int height){
+		tabla.setBounds(x, y, width, height);
+	}
+	
 }

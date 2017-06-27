@@ -71,7 +71,35 @@ public class Asignador {
 	public ArrayList<Materia> getMaterias() {
 		return materias;
 	}
-	
-	
+	private int cantidadMaterias(){
+		int cantidad =  0;
+		for (Aula aula : aulas) {
+			cantidad += aula.materias.size(); 
+		}
+		return cantidad;
+	}
+	public String[][] getMatrizMaterias(){
+		if(aulas != null){
+			int cantidadMaterias = cantidadMaterias();
+			int contador = 0;
+			final int cantidadColumnas = 5;
+			String[][] matriz = new String[cantidadMaterias][cantidadColumnas];
+			for (int i = 0; i < aulas.size(); i++) {
+				for (int j = 0; j < aulas.get(i).materias.size(); j++) {
+					matriz[contador][0] = aulas.get(i).numero + "";
+					for (int j2 = 1; j2 < cantidadColumnas; j2++) {
+						if(j2 == 1)matriz[contador][j2] = aulas.get(i).materias.get(j).nombre;
+						if(j2 == 2)matriz[contador][j2] = aulas.get(i).materias.get(j).codigo + "";
+						if(j2 == 3)matriz[contador][j2] = aulas.get(i).materias.get(j).horaInicio + "";
+						if(j2 == 4)matriz[contador][j2] = aulas.get(i).materias.get(j).horaFin + "";
+					}
+					contador++;
+				}
+			}
+			System.out.println(contador);
+			return matriz;
+		}
+		return null;
+	}
 
 }
