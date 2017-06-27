@@ -24,7 +24,7 @@ public class Tabla extends JPanel{
 		model = new DefaultTableModel(null, nombreColumnas);
 		
 		tabla = new JTable(model);
-		tabla .setPreferredScrollableViewportSize(new Dimension(500,700));
+		tabla .setPreferredScrollableViewportSize(new Dimension(500,300));
 		tabla.setFillsViewportHeight(true);
 		
 		if(DEBUG){

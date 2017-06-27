@@ -96,7 +96,6 @@ public class Asignador {
 					contador++;
 				}
 			}
-			System.out.println(contador);
 			return matriz;
 		}
 		return null;
