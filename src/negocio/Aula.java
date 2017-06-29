@@ -1,7 +1,6 @@
 package negocio;
 
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Aula {
 	final int numero; 

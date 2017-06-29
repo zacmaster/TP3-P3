@@ -79,7 +79,7 @@ public class Asignador {
 		Collections.sort(materias, new Comparator<Materia>() {
 			@Override
 			public int compare(Materia m1, Materia m2) {
-				return m1.getHoraInicio() - m2.getHoraInicio();
+				return m1.horaInicio - m2.horaInicio;
 			}
 	    });
 	}

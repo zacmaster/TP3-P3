@@ -31,24 +31,6 @@ public class Materia{
 		this.duracion = horaFin - horaInicio;
 	}
 	
-	public String getNombre() {
-		return nombre;
-	}
-
-
-	public int getCodigo() {
-		return codigo;
-	}
-
-
-	public int getHoraInicio() {
-		return horaInicio;
-	}
-
-
-	public int getHoraFin() {
-		return horaFin;
-	}
 
 	@Override
 	public String toString() {
