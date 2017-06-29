@@ -19,7 +19,7 @@ public class Aula {
 	public int getNumero(){
 		return numero;
 	}
-
+	//Agrega materia y devuelve un booleano, también modifica las horas disponibles segun la materia agregada
 	public boolean agregarMateria(Materia materia) {
 		if(materia == null)return false;
 		if(materia.duracion <= horasDisponibles && finUltimaMateria <= materia.horaInicio){
@@ -31,6 +31,7 @@ public class Aula {
 		return false;
 	}
 	
+	//Si las horas disponibles son cero, entonces el aula está llena
 	public boolean llena(){
 		return (horasDisponibles == 0)? true:false;
 	}

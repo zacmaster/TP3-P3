@@ -16,7 +16,7 @@ public class Asignador {
 		materiasJSON = new MateriasJSON();
 	}
 	
-	
+	//El asignador leer el achivo si es JSON
 	public boolean leerArchivo(String archivo){
 		if(esJSON(archivo)){
 			materiasJSON.leerArchivo(archivo);
@@ -26,6 +26,7 @@ public class Asignador {
 		return false;
 	}
 	
+	//Metodo para probar el Asignador en el Test
 	void setMateriasPrueba(){
 		ArrayList<Materia> materias = new ArrayList<>();
 		Materia m1 = new Materia("Matematica", 0, 8, 12);
@@ -39,7 +40,7 @@ public class Asignador {
 		this.materias = materias;
 	}
 	
-	
+	//Asigna las materias a las aulas
 	public void asignar(){
 		ordenarMateriasPorHorario();
 		asignarMaterias(materias);
@@ -50,13 +51,17 @@ public class Asignador {
 		return aulas;
 	}
 
+	//Matchea con un String terminado en .json
 	private boolean esJSON(String archivo){
 		Pattern pattern = Pattern.compile(".{1,80}\\.json");
 		Matcher matcher = pattern.matcher(archivo);
 		return (matcher.matches() ? true : false);
 		
 	}
-
+	
+	
+	//Asigna materias en las aulas según el horario, sin que se superpongan.
+	//	Crea aulas segun la necesidad
 	public void asignarMaterias(ArrayList<Materia> materias){
 		ArrayList<Integer> indicesRecorridos = new ArrayList<>();
 		Aula aula = new Aula(1);
@@ -88,6 +93,8 @@ public class Asignador {
 		return aula.agregarMateria(materia);
 	}
 
+	
+	//Ordena las materias por horario
 	public void ordenarMateriasPorHorario(){
 		Collections.sort(materias, new Comparator<Materia>() {
 			@Override
@@ -106,6 +113,8 @@ public class Asignador {
 		}
 		return cantidad;
 	}
+	
+	//Devuelve las materias en una matriz de Strings para luego ser cargado en la tabla
 	public String[][] getMatrizMaterias(){
 		if(aulas != null){
 			int cantidadMaterias = cantidadMaterias();
@@ -124,6 +133,7 @@ public class Asignador {
 					contador++;
 				}
 			}
+			//Cada vez que lo hace limpia las aulas previas
 			aulas.clear();
 			return matriz;
 		}

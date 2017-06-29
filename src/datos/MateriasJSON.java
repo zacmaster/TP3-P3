@@ -18,7 +18,7 @@ public class MateriasJSON{
 	public MateriasJSON(){
 		materias = null;
 	}
-	
+	//Escribe archivo JSON
 	public void escribirArchivo(String archivo,ArrayList<Materia> materias){
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		String json = gson.toJson(materias);
@@ -29,7 +29,7 @@ public class MateriasJSON{
 		}
 		catch (Exception ex){}
 	}
-	
+	//Lee archivo JSON
 	public void leerArchivo(String archivo){
 		Gson gson = new Gson();
 		try {

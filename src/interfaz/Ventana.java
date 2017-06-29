@@ -40,7 +40,6 @@ public class Ventana extends JPanel implements ActionListener{
 		contentPane.setLayout(new BorderLayout());
 		
 		
-		
 		_barraMenu = new JMenuBar();
 		_barraMenu.setBounds(0, 0, 783, 21);
 		contentPane.add(_barraMenu, BorderLayout.NORTH);

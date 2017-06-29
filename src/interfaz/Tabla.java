@@ -34,7 +34,7 @@ public class Tabla extends JPanel{
 			_model.addRow(row);
 		}
 	}
-	
+	//Limpia la tabla
 	public void limpiarTabla(){
 		_model.setRowCount(0);
 	}
