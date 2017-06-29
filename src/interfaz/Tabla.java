@@ -60,6 +60,10 @@ public class Tabla extends JPanel{
 			model.addRow(row);
 		}
 	}
+	
+	public void limpiarTabla(){
+		model.setRowCount(0);
+	}
 	public void setTableBounds(int x, int y, int width,int height){
 		tabla.setBounds(x, y, width, height);
 	}

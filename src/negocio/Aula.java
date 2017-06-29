@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Aula {
-	private static final AtomicInteger count = new AtomicInteger(0); 
 	final int numero; 
 	public ArrayList<Materia> materias;
 	int horasDisponibles;
 	int finUltimaMateria;
 
-	public Aula() {
-		numero = count.incrementAndGet();
+	public Aula(int numero) {
+		this.numero = numero;
 		horasDisponibles = 12;
 		materias = new ArrayList<Materia>();
 		finUltimaMateria = 8;

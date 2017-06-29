@@ -78,10 +78,12 @@ public class Ventana extends JPanel implements ActionListener{
             int returnVal = fc.showOpenDialog(null);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
               file = fc.getSelectedFile();
-//              System.out.println(file);
-              Asignador asignador = new Asignador(file.toString());
-              asignador.asignar();
-              tabla.cargarTabla(asignador.getMatrizMaterias());
+              Asignador asignador = new Asignador();
+              if(asignador.leerArchivo(file.toString())){
+            	  tabla.limpiarTabla();
+            	  asignador.asignar();
+            	  tabla.cargarTabla(asignador.getMatrizMaterias());
+              }
             }
         } else if (e.getSource() == mntmSalir) {
         	System.exit(0);

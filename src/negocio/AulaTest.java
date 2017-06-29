@@ -7,7 +7,7 @@ import org.junit.After;
 import org.junit.Test;
 
 public class AulaTest {	
-	Aula aula = new Aula();
+	Aula aula = new Aula(1);
 	
 	
 	@Test
@@ -19,7 +19,7 @@ public class AulaTest {
 	
 	@Test
 	public void aulaLlena(){
-		Aula a1 = new Aula();
+		Aula a1 = new Aula(1);
 		assertFalse(a1.llena());
 		a1.agregarMateria(new Materia("A", 0, 8, 12));
 		a1.agregarMateria(new Materia("B", 0, 13, 17));

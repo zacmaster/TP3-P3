@@ -20,7 +20,7 @@ public class Asignador {
 	public boolean leerArchivo(String archivo){
 		if(esJSON(archivo)){
 			materiasJSON.leerArchivo(archivo);
-			materias= materiasJSON.getMaterias();
+			materias = materiasJSON.getMaterias();
 			return true;
 		}
 		return false;
@@ -38,16 +38,15 @@ public class Asignador {
 	}
 
 	private boolean esJSON(String archivo){
-		Pattern pattern = Pattern.compile("[\\w\\d]{1,25}\\.json");
+		Pattern pattern = Pattern.compile(".{1,80}\\.json");
 		Matcher matcher = pattern.matcher(archivo);
 		return (matcher.matches() ? true : false);
 		
 	}
 
 	public void asignarMaterias(ArrayList<Materia> materias){
-		
 		ArrayList<Integer> indicesRecorridos = new ArrayList<>();
-		Aula aula = new Aula();
+		Aula aula = new Aula(1);
 		aulas.add(aula);
 		int indiceAulas = 0;
 		
@@ -66,7 +65,7 @@ public class Asignador {
 				}
 			}
 			if(indicesRecorridos.size() != materias.size()){
-				aulas.add(new Aula(){});
+				aulas.add(new Aula(indiceAulas+2){});
 			}
 			indiceAulas++;
 		}
@@ -112,6 +111,7 @@ public class Asignador {
 					contador++;
 				}
 			}
+			aulas.clear();
 			return matriz;
 		}
 		return null;
