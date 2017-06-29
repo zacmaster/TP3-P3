@@ -56,14 +56,14 @@ public class Ventana extends JPanel implements ActionListener{
 		menuBar.add(mnNewMenu);
 		
 		mntmCargar = new JMenuItem("Abrir");
-		mntmCargar.setIcon(new ImageIcon(Ejemplo.class.getResource("/javax/swing/plaf/metal/icons/ocean/file.gif")));
-		mntmCargar.setSelectedIcon(new ImageIcon(Ejemplo.class.getResource("/com/sun/java/swing/plaf/windows/icons/File.gif")));
+		mntmCargar.setIcon(new ImageIcon(Ventana.class.getResource("/javax/swing/plaf/metal/icons/ocean/file.gif")));
+		mntmCargar.setSelectedIcon(new ImageIcon(Ventana.class.getResource("/com/sun/java/swing/plaf/windows/icons/File.gif")));
 		mntmCargar.setHorizontalAlignment(SwingConstants.LEFT);
 		mnNewMenu.add(mntmCargar);
 		mntmCargar.addActionListener(this);
 		
 		mntmSalir = new JMenuItem("Salir");
-		mntmSalir.setIcon(new ImageIcon(Ejemplo.class.getResource("/javax/swing/plaf/metal/icons/ocean/close.gif")));
+		mntmSalir.setIcon(new ImageIcon(Ventana.class.getResource("/javax/swing/plaf/metal/icons/ocean/close.gif")));
 		mnNewMenu.add(mntmSalir);
 		mntmSalir.addActionListener(this);
 		
