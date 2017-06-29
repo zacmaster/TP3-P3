@@ -1,5 +1,6 @@
 package negocio;
 
+import java.util.regex.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -9,13 +10,22 @@ import datos.MateriasJSON;
 public class Asignador {
 	private ArrayList<Aula> aulas;
 	private ArrayList<Materia> materias;
-	
-	public Asignador(String archivo){
-		MateriasJSON materiasJSON = new MateriasJSON();
-		materiasJSON.leerArchivo(archivo);
-		materias= materiasJSON.getMaterias();
+	private MateriasJSON materiasJSON;
+	public Asignador(){
 		aulas = new ArrayList<Aula>();
+		materiasJSON = new MateriasJSON();
 	}
+	
+	
+	public boolean leerArchivo(String archivo){
+		if(esJSON(archivo)){
+			materiasJSON.leerArchivo(archivo);
+			materias= materiasJSON.getMaterias();
+			return true;
+		}
+		return false;
+	}
+	
 	
 	public void asignar(){
 		ordenarMateriasPorHorario();
@@ -27,6 +37,12 @@ public class Asignador {
 		return aulas;
 	}
 
+	private boolean esJSON(String archivo){
+		Pattern pattern = Pattern.compile("[\\w\\d]{1,25}\\.json");
+		Matcher matcher = pattern.matcher(archivo);
+		return (matcher.matches() ? true : false);
+		
+	}
 
 	public void asignarMaterias(ArrayList<Materia> materias){
 		
