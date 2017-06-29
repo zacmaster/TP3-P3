@@ -7,7 +7,7 @@ public class Aplicacion {
 			public void run() {
 				try {
 					Ventana ventana = new Ventana();
-					ventana.frame.setVisible(true);
+					ventana._frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
