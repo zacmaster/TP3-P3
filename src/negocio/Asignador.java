@@ -26,6 +26,19 @@ public class Asignador {
 		return false;
 	}
 	
+	void setMateriasPrueba(){
+		ArrayList<Materia> materias = new ArrayList<>();
+		Materia m1 = new Materia("Matematica", 0, 8, 12);
+		Materia m2 = new Materia("Matematica 2", 1, 13, 17);
+		Materia m3 = new Materia("Matematica 3", 2, 18, 22);
+		Materia m4 = new Materia("Matematica 4", 3, 8, 12);
+		materias.add(m1);
+		materias.add(m2);
+		materias.add(m3);
+		materias.add(m4);
+		this.materias = materias;
+	}
+	
 	
 	public void asignar(){
 		ordenarMateriasPorHorario();
