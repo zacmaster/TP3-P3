@@ -2,7 +2,6 @@ package interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -13,7 +12,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
 import negocio.Asignador;
@@ -27,7 +25,6 @@ public class Ventana extends JPanel implements ActionListener{
 	JMenuItem _menuSalir;
 	JFileChooser _fc;
 	Tabla _tabla;
-	JTextArea _log;
 	File _file;
 	
 	public Ventana(){
@@ -42,9 +39,6 @@ public class Ventana extends JPanel implements ActionListener{
 		Container contentPane = _frame.getContentPane();
 		contentPane.setLayout(new BorderLayout());
 		
-		_log = new JTextArea(5,20);
-        _log.setMargin(new Insets(5,5,5,5));
-        _log.setEditable(false);
 		
 		
 		_barraMenu = new JMenuBar();
